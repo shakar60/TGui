@@ -7,7 +7,7 @@ local player = Players.LocalPlayer
 
 -- Create the main ScreenGui
 local gui = Instance.new("ScreenGui")
-gui.Name = "TGui" -- Changed from "GGui" to "TGui"
+gui.Name = "TGui" -- Changed to "TGui"
 gui.ResetOnSpawn = false -- Ensure the GUI doesn't disappear on reset
 gui.Parent = CoreGui -- Set the GUI parent to CoreGui for the nicer look
 
@@ -30,13 +30,13 @@ UICornerOuter.Parent = frame
 
 -- Create the main button
 local tButton = Instance.new("TextButton")
-tButton.Name = "TButton" -- Changed from "GButton" to "TButton"
+tButton.Name = "TButton" -- Changed to "TButton"
 tButton.Size = UDim2.new(0, 180, 0, 60)
 tButton.Position = UDim2.new(0.5, -90, 0.5, -30)
 tButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50) -- Dark grey background
 tButton.BorderSizePixel = 0
 tButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
-tButton.Text = "T Gui" -- Changed from "G Gui" to "T Gui"
+tButton.Text = "T Gui" -- Changed to "T Gui"
 tButton.Font = Enum.Font.SourceSans
 tButton.TextSize = 24
 tButton.TextScaled = true -- Makes the text larger
@@ -49,17 +49,13 @@ UICornerButton.Parent = tButton
 
 -- Button click event
 tButton.MouseButton1Click:Connect(function()
-    local vim = game:GetService("VirtualInputManager")
-    vim:SendKeyEvent(true, Enum.KeyCode.T, false, game) -- Changed from "G" to "T"
+    -- You can add functionality here if needed
 end)
 
--- Key press event to send the key press
+-- Key press event to handle specific actions (if needed)
 UserInputService.InputBegan:Connect(function(input, isProcessed)
     if isProcessed then return end
-    if input.KeyCode == Enum.KeyCode.T then -- Key to send
-        local vim = game:GetService("VirtualInputManager")
-        vim:SendKeyEvent(true, Enum.KeyCode.T, false, game) -- Changed from "G" to "T"
-    end
+    -- Handle key inputs if needed
 end)
 
 -- Variable to track if the notification has been shown
